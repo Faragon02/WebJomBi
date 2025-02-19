@@ -121,6 +121,7 @@ body {
             font-weight: 400;
             font-style: normal;
 }
+
 .button-container {
     position: relative;
     display: inline-block;
@@ -132,7 +133,6 @@ body {
     transform: translateX(-50%);
     width: 80px;
     height: 80px;
-    background: url('assets/zombie_button.png') no-repeat center/cover;
     animation: idle 1s infinite alternate;
 }
 .button {

@@ -121,3 +121,60 @@ body {
             font-weight: 400;
             font-style: normal;
 }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #252525;
+}
+.button-container {
+    position: relative;
+    display: inline-block;
+}
+.zombie {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+    background: url('C:\\Users\\chj20\\Desktop\\VSCodeTest\\MiniProject\\Webzombie\\WebJomBi\\zombie_button.png') no-repeat center/cover;
+    animation: idle 1s infinite alternate;
+}
+.button {
+    width: 150px;
+    height: 50px;
+    background-color: red;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+}
+
+@keyframes idle {
+    0% { transform: translateX(-50%) translateY(0); }
+    100% { transform: translateX(-50%) translateY(-5px); }
+}
+
+@keyframes knock {
+    0%, 100% { transform: translateX(-50%) translateY(0) rotate(0deg); }
+    50% { transform: translateX(-50%) translateY(5px) rotate(-5deg); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    50% { transform: translateX(3px); }
+    75% { transform: translateX(-2px); }
+}
+
+.button-container:hover .zombie {
+    animation: knock 0.2s infinite alternate;
+}
+
+.button:active {
+    animation: shake 0.2s ease-in-out;
+}

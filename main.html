@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="main.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
     import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
@@ -32,8 +33,8 @@
     // Firebase 인스턴스 초기화
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
-       // 문서가 로드된 후 실행되도록 설정
-       $(document).ready(function () {
+    // 문서가 로드된 후 실행되도록 설정
+    $(document).ready(function () {
         $("#postingbtn").click(async function () {
             let input_image = $('#image').val();
             let input_name = $('#name').val();
@@ -83,8 +84,6 @@
     });
 </script>
 
-
-
 <body>
     <nav class="navbar">
         <div class="navbar-content">
@@ -110,20 +109,20 @@
 
     <div class="mypostingbox" id="postingbox">
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="image" placeholder="이미지">
-          <label for="floatingInput">프로필 이미지</label>
+            <input type="text" class="form-control" id="image" placeholder="이미지">
+            <label for="floatingInput">프로필 이미지</label>
         </div>
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="name" placeholder="이름">
-          <label for="floatingInput">이름</label>
+            <input type="text" class="form-control" id="name" placeholder="이름">
+            <label for="floatingInput">이름</label>
         </div>
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="content" placeholder="내용">
-          <label for="floatingInput">각오 한마디!</label>
+            <input type="text" class="form-control" id="content" placeholder="내용">
+            <label for="floatingInput">각오 한마디!</label>
         </div>
         <div class="mybtn">
-          <button id="postingbtn" type="button" class="btn btn-dark">기록하기</button>
-          <button type="button" class="btn btn-outline-dark">닫기</button>
+            <button id="postingbtn" type="button" class="btn btn-dark">기록하기</button>
+            <button type="button" class="btn btn-outline-dark">닫기</button>
         </div>
     </div>
 

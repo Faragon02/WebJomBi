@@ -81,7 +81,7 @@ async function loadData(name) {
                 </li>
                 <li class="list-group-item01">
                     <span class="label">좋아요</span>
-                    <span id="likeCount" class="content">☆좋아요 연결</span>
+                    <span id="likeCount" class="content">0</span>
                 </li>
             </ul>
         `;
@@ -96,3 +96,30 @@ async function loadData(name) {
     });
 }
 
+$("button#commentBtn").click(function (event) {
+    event.preventDefault();  // 폼 제출 방지
+    // 입력된 이름과 댓글 내용 가져오기
+    let commentname = $("#commentname").val();
+    let commentText = $("#comment").val();
+    // 이름과 댓글 내용이 모두 입력되었는지 확인
+    if (commentname && commentText) {
+        // 새로운 댓글 항목 만들기
+        let commentItem = $("<div>").addClass("comment-item")
+            .html("<strong>" + commentname + "</strong>: " + commentText);
+        // 댓글 리스트에 추가
+        $("#commentList").append(commentItem);
+        // 입력 필드 초기화
+        $("#commentname").val('');
+        $("#comment").val('');
+        // 알림창 띄우기
+        alert('등록 되었습니다.');
+    } else {
+        alert('이름과 댓글을 모두 입력해주세요.');
+    }
+});
+
+$("#likeBtn").click(function () {
+    let likeSpan = $("#likeCount"); // 좋아요 숫자가 들어갈 span 태그 선택
+    let currentLikes = parseInt(likeSpan.text());
+    likeSpan.text(currentLikes + 1); // 1 증가
+});

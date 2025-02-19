@@ -24,9 +24,15 @@ $(document).ready(function () {
     $("#postingbtn").click(async function () {
         let input_image = $('#image').val();
         let input_name = $('#name').val();
+        let input_gender = $('#gender').val();
+        let input_mbti = $('#mbti').val();
+        let input_email = $('#email').val();
+        let input_blog = $('#blog').val();
+        let input_hobby = $('#hobby').val();
         let input_content = $('#content').val();
 
-        if (!input_image || !input_name || !input_content) {
+        if (!input_image || !input_name  || !input_gender || !input_mbti || !input_email
+            || !input_blog || !input_hobby || !input_content) {
             alert("모든 필드를 입력해주세요!");
             return;
         }
@@ -34,6 +40,11 @@ $(document).ready(function () {
         let doc = {
             image: input_image,
             name: input_name,
+            gender : input_gender,
+            mbti : input_mbti,
+            email : input_email,
+            blog : input_blog,
+            hobby : input_hobby,
             content: input_content,
         };
 

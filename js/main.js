@@ -79,7 +79,9 @@ $(document).ready(function () {
     }
     
     window.redirectToDetail = function(name) {
-        window.location.href = `detailpg.html?name=${name}`;
+        localStorage.setItem('selectedName', name);
+        // 상세 페이지로 리디렉션
+        window.location.href = 'detailpg.html';
     };
 
 

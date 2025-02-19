@@ -16,47 +16,14 @@
         href="https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Black+Han+Sans&family=Dokdo&family=East+Sea+Dokdo&family=Gowun+Dodum&family=Gugi&family=Nanum+Myeongjo&family=Nanum+Pen+Script&family=Song+Myung&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/detailpg.css">
+    <script type="module" src="js/detailpg.js"></script>
 </head>
 
 <body>
     <div class="main">
         <div class="mainleft">
-            <div class="card">
-                <div class="card-header">
-                    좀비 소개
-                </div>
-                <ul class="list-group">
-                    <li class="list-group-item01">
-                        <span class="label">이름</span>
-                        <span class="content">☆이름연결</span>
-                    </li>
-                    <li class="list-group-item02">
-                        <span class="label">MBTI</span>
-                        <span class="content">☆MBTI연결</span>
-                    </li>
-                    <li class="list-group-item01">
-                        <span class="label">이메일</span>
-                        <span class="content">☆이메일연결</span>
-                    </li>
-                    <li class="list-group-item01">
-                        <span class="label">소개글</span>
-                        <span class="content">☆소개글연결</span>
-                    </li>
-                    <li class="list-group-item01">
-                        <span class="label">블로그 주소</span>
-                        <span class="content"><a href="https://zombie-blog.com">☆블로그주소연결</a></span>
-                    </li>
-                    <li class="list-group-item01">
-                        <span class="label">역할</span>
-                        <span class="content">☆역할 연결</span>
-                    </li>
-                    <li class="list-group-item01">
-                        <span class="label">좋아요</span>
-                        <span id="likeCount" class="content">☆좋아요 연결</span>
-                    </li>
-                </ul>
+            <div class="card" id="detail_card">
             </div>
-
             <div class="comment">
                 <!-- 댓글 입력 폼 -->
                 <form class="comment-box" id="commentForm">

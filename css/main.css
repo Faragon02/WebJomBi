@@ -1,10 +1,14 @@
 .main {
-    height: 100vh; /* 화면 높이에 맞추기 */
+    height: 100vh;
+    /* 화면 높이에 맞추기 */
     color: white;
     background-image: url("../assets/zombies.png");
-    background-size: contain; /* 이미지가 요소 크기에 맞게 조정 */
-    background-position: center top; /* 이미지를 위쪽에 고정해서 머리 안잘림 */
-    background-repeat: no-repeat; /* 반복되지 않게 설정 */
+    background-size: contain;
+    /* 이미지가 요소 크기에 맞게 조정 */
+    background-position: center top;
+    /* 이미지를 위쪽에 고정해서 머리 안잘림 */
+    background-repeat: no-repeat;
+    /* 반복되지 않게 설정 */
 }
 
 /* 이미지에 올리면, 아래 방향 화살표 마우스 호버 */
@@ -102,10 +106,18 @@ body {
 }
 
 .music_toggle_btn {
-margin-top: 20px; 
-padding: 10px 20px; 
-background-color: transparent; 
-color: #fff; 
-border-radius: 5px; 
-cursor: pointer;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/*폰트 추가*/
+
+* {
+    font-family: "Black And White Picture", serif;
+            font-weight: 400;
+            font-style: normal;
 }

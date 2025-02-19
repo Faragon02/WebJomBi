@@ -31,7 +31,7 @@ $(document).ready(function () {
         let input_hobby = $('#hobby').val();
         let input_content = $('#content').val();
 
-        if (!input_image || !input_name  || !input_gender || !input_mbti || !input_email
+        if (!input_image || !input_name || !input_gender || !input_mbti || !input_email
             || !input_blog || !input_hobby || !input_content) {
             alert("모든 필드를 입력해주세요!");
             return;
@@ -40,11 +40,11 @@ $(document).ready(function () {
         let doc = {
             image: input_image,
             name: input_name,
-            gender : input_gender,
-            mbti : input_mbti,
-            email : input_email,
-            blog : input_blog,
-            hobby : input_hobby,
+            gender: input_gender,
+            mbti: input_mbti,
+            email: input_email,
+            blog: input_blog,
+            hobby: input_hobby,
             content: input_content,
         };
 
@@ -53,7 +53,7 @@ $(document).ready(function () {
         window.location.reload();
     });
 
-    
+
     // Firestore에서 데이터 가져오기
     async function loadData() {
         let docs = await getDocs(collection(db, "webjombi"));
@@ -64,21 +64,24 @@ $(document).ready(function () {
             let content = row.content;
 
             let temp_html = `
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="${image}" class="card-img-top" alt="프로필 이미지">
-                        <div class="card-body">
-                            <h5 class="card-title">${name}</h5>
-                            <p class="card-text">${content}</p>
-                            <button type="button" class="btn btn-secondary" onclick="redirectToDetail('${name}')">자세히 보기</button>
-                        </div>
+                 <div class="col">
+                 <div class="card h-100">
+                   <img src="${image}" class="card-img-top" alt="프로필 이미지">
+                    <div class="card-body">
+                      <h5 class="card-title">${name}</h5>
+                      <p class="card-text">${content}</p>
+                        <div class="button-container">
+                         <div class="zombie"></div>
+                     <button type="button" class="btn btn-secondary" onclick="redirectToDetail('${name}')">자세히 보기</button>
                     </div>
-                </div>`;
+                </div>
+            </div>
+        </div>`;
             $('#card').append(temp_html);
         });
     }
-    
-    window.redirectToDetail = function(name) {
+
+    window.redirectToDetail = function (name) {
         localStorage.setItem('selectedName', name);
         // 상세 페이지로 리디렉션
         window.location.href = 'detailpg.html';

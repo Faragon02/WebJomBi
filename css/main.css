@@ -1,23 +1,31 @@
 .main {
-    height: 1100px; /* 화면 전체 높이에 맞추기 */
+    height: 100vh; /* 화면 높이에 맞추기 */
     color: white;
-    background-image: url("zombies.png");
-    background-size: cover; /* 이미지가 요소 크기에 맞게 조정 */
-    background-position: center;
+    background-image: url("../assets/zombies.png");
+    background-size: contain; /* 이미지가 요소 크기에 맞게 조정 */
+    background-position: center top; /* 이미지를 위쪽에 고정해서 머리 안잘림 */
     background-repeat: no-repeat; /* 반복되지 않게 설정 */
+}
+
+/* 이미지에 올리면, 아래 방향 화살표 마우스 호버 */
+/* 자바스크립트 scrollBy로 클릭하면 내려가게 하고 싶음 */
+.main:hover {
+    cursor: url('../assets/cursor_going_down.png'), pointer;
 }
 
 /* 작은 화면에서 높이를 400px로 조정 */
 @media (max-width: 768px) {
     .main {
-        height: 400px;
+        height: 80vh;
+        background-size: contain;
     }
 }
 
 /* 더 작은 화면에서는 높이를 300px로 조정 */
 @media (max-width: 480px) {
     .main {
-        height: 300px;
+        height: 60vh;
+        background-size: contain;
     }
 }
 
@@ -91,4 +99,13 @@ body {
 
 .mypostingbox>button {
     width: 100%;
+}
+
+.music_toggle_btn {
+margin-top: 20px; 
+padding: 10px 20px; 
+background-color: transparent; 
+color: #fff; 
+border-radius: 5px; 
+cursor: pointer;
 }

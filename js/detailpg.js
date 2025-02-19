@@ -19,7 +19,7 @@ const db = getFirestore(app);
 $(document).ready(function () {
     // localStorage에서 'selectedName' 값 가져오기
     const name = localStorage.getItem('selectedName');
-    
+
     if (!name) {
         $("#detail_card").html("<p>잘못된 접근입니다.</p>");
         return;
@@ -51,18 +51,48 @@ async function loadData(name) {
         let content = row.content;
 
         let temp_html = `
-            <div class="card">
-                <img src="${image}" class="card-img-top" alt="프로필 이미지">
-                <div class="card-body">
-                    <h5 class="card-title">${name}</h5>
-                    <p class="card-text"><strong>성별:</strong> ${gender}</p>
-                    <p class="card-text"><strong>MBTI:</strong> ${mbti}</p>
-                    <p class="card-text"><strong>이메일:</strong> ${email}</p>
-                    <p class="card-text"><strong>블로그:</strong> <a href="${blog}" target="_blank">${blog}</a></p>
-                    <p class="card-text"><strong>취미:</strong> ${hobby}</p>
-                    <p class="card-text"><strong>소개:</strong> ${content}</p>
-                </div>
-            </div>`;
+            <div class="card-header">
+                좀비 소개
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item01">
+                    <span class="label">이름</span>
+                    <span class="content">${name}</span>
+                </li>
+                <li class="list-group-item02">
+                    <span class="label">MBTI</span>
+                    <span class="content">${mbti}</span>
+                </li>
+                <li class="list-group-item01">
+                    <span class="label">이메일</span>
+                    <span class="content">${email}</span>
+                </li>
+                <li class="list-group-item01">
+                    <span class="label">소개글</span>
+                    <span class="content">${content}</span>
+                </li>
+                <li class="list-group-item01">
+                    <span class="label">블로그 주소</span>
+                    <span class="content"><a href="${blog}" target="_blank">${blog}</a></span>
+                </li>
+                <li class="list-group-item01">
+                    <span class="label">특기 or 취미</span>
+                    <span class="content">${hobby}</span>
+                </li>
+                <li class="list-group-item01">
+                    <span class="label">좋아요</span>
+                    <span id="likeCount" class="content">☆좋아요 연결</span>
+                </li>
+            </ul>
+        `;
+
         $("#detail_card").append(temp_html);
+
+        let temp_image = `
+            <div class="photo">
+                <img src="${image}" width="250"></img>
+        `
+        $("#detailimage").append(temp_image);
     });
 }
+

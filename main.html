@@ -32,8 +32,8 @@
     // Firebase 인스턴스 초기화
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
-       // 문서가 로드된 후 실행되도록 설정
-       $(document).ready(function () {
+    // 문서가 로드된 후 실행되도록 설정
+    $(document).ready(function () {
         $("#postingbtn").click(async function () {
             let input_image = $('#image').val();
             let input_name = $('#name').val();
@@ -60,6 +60,8 @@
             let docs = await getDocs(collection(db, "webjombi"));
             docs.forEach((doc) => {
                 let row = doc.data();
+                let id = doc.id;
+                console.log(id);
                 let image = row.image;
                 let name = row.name;
                 let content = row.content;
@@ -71,15 +73,20 @@
                             <div class="card-body">
                                 <h5 class="card-title">${name}</h5>
                                 <p class="card-text">${content}</p>
-                                <button type="button" class="btn btn-secondary">자세히 보기</button>
+                                <button type="button" class="btn btn-secondary" onclick="redirectToDetail('${name}')">자세히 보기</button>
                             </div>
                         </div>
                     </div>`;
                 $('#card').append(temp_html);
             });
         }
+        
+        window.redirectToDetail = function(name) {
+            window.location.href = `detailpg.html?name=${name}`;
+        };
 
-        loadData(); // 데이터 불러오기 실행
+
+        loadData();
     });
 </script>
 
@@ -110,20 +117,20 @@
 
     <div class="mypostingbox" id="postingbox">
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="image" placeholder="이미지">
-          <label for="floatingInput">프로필 이미지</label>
+            <input type="text" class="form-control" id="image" placeholder="이미지">
+            <label for="floatingInput">프로필 이미지</label>
         </div>
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="name" placeholder="이름">
-          <label for="floatingInput">이름</label>
+            <input type="text" class="form-control" id="name" placeholder="이름">
+            <label for="floatingInput">이름</label>
         </div>
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="content" placeholder="내용">
-          <label for="floatingInput">각오 한마디!</label>
+            <input type="text" class="form-control" id="content" placeholder="내용">
+            <label for="floatingInput">각오 한마디!</label>
         </div>
         <div class="mybtn">
-          <button id="postingbtn" type="button" class="btn btn-dark">기록하기</button>
-          <button type="button" class="btn btn-outline-dark">닫기</button>
+            <button id="postingbtn" type="button" class="btn btn-dark">기록하기</button>
+            <button type="button" class="btn btn-outline-dark">닫기</button>
         </div>
     </div>
 

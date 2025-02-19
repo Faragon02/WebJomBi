@@ -1,0 +1,94 @@
+.main {
+    height: 1100px; /* 화면 전체 높이에 맞추기 */
+    color: white;
+    background-image: url("zombies.png");
+    background-size: cover; /* 이미지가 요소 크기에 맞게 조정 */
+    background-position: center;
+    background-repeat: no-repeat; /* 반복되지 않게 설정 */
+}
+
+/* 작은 화면에서 높이를 400px로 조정 */
+@media (max-width: 768px) {
+    .main {
+        height: 400px;
+    }
+}
+
+/* 더 작은 화면에서는 높이를 300px로 조정 */
+@media (max-width: 480px) {
+    .main {
+        height: 300px;
+    }
+}
+
+.navbar {
+    background-color: #000;
+    padding: 70px 0;
+}
+
+.navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+}
+
+.navbar-item {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.navbar-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.objective {
+    margin-top: 5%;
+    height: 200px;
+    color: white;
+    background-color: green;
+    background-position: center;
+}
+
+.profile_cards {
+    margin-top: 8%;
+}
+
+body {
+    background-color: black;
+}
+
+.mycards {
+    width: 1200px;
+    margin: 20px auto 20px auto;
+}
+
+.mypostingbox {
+    width: 500px;
+    margin: 20px auto 20px auto;
+    border: 1px solid white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.form-floating>input {
+    background-color: transparent;
+    color: white;
+}
+
+.form-floating>label {
+    color: white;
+}
+
+.input-group>label {
+    background-color: transparent;
+    color: white;
+}
+
+.mypostingbox>button {
+    width: 100%;
+}

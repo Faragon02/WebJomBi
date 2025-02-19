@@ -70,10 +70,11 @@ $(document).ready(function () {
                     <div class="card-body">
                       <h5 class="card-title">${name}</h5>
                       <p class="card-text">${content}</p>
-                        <div class="button-container">
-                         <div class="zombie"></div>
-                     <button type="button" class="btn btn-secondary" onclick="redirectToDetail('${name}')">자세히 보기</button>
-                    </div>
+                       </div>
+                        <div class="button-container">  
+                            <div class="zombie">
+                        </div>
+                        <button type="button" class="btn btn-secondary" onclick="redirectToDetail('${name}')">자세히 보기</button>
                 </div>
             </div>
         </div>`;

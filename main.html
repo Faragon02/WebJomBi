@@ -146,49 +146,61 @@
                         <span style=" color:red; font-family: Impact,'Bold', sans-serif;"><br>살아남을 자, 준비해라!</span>
                     </p><br><br>
 
+                    <!--팝업창 -->
                     <button type="button" id="openPopup" class="popbutton">우리의 기록</button>
                     <div id="popup" class="popup">
                         <div class="popup-content">
                             <!-- <span id="closePopup" class="close">&times;</span> -->
-                            <p>
-                            <p style="font-size: 50px;">. . .</p>
-                            <p style="font-size: 24px; "><span style=" line-height: 4.0;color:orange;">1 </span>일차</p>
-                            <p style="font-size: 22px; line-height: 4.0;"> 내가 생각한 프로젝트를 구현하고 원하는대로 동작하고 좋은 상태로 유지하고
-                                싶어!!<br> </P>
-
-                            <p style="font-size: 24px; color:orange;"><span style=" line-height: 4.0;color:orange;">2
-                                </span>일차</p>
-                            <p style="font-size: 22px; line-height: 4.0;">.... 각개분투 후 모이니, 같은 곳을 동시에 하고 있는 비효율적인 행동을 하고
-                                있었다,,,,!!<br>
-                                내가 생각한 기능을 모두가 다른 기능으로 생각하고 있었다....!!!?<br>
-                                모두.. 집합.... 각자의 최애템을 통해서라도... <br>우리는 계속 개발을 해나가야해.....<br>
-                                (커피쪽쪽, 운동으쌰, 게임뿅뿅, 집B콕눕개발, 먹어우걱)<br></p>
-
-                            <p style="font-size: 24px; "><span style=" line-height: 4.0;color:orange;">3 </span>일차</p>
-                            <p style="font-size: 22px;">내 생명과 바꿔 교훈을 얻었다....<br>
-                                "<span
-                                    style="color:yellow; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold'">팀원들과
-                                    잘 어울어지는</span> 좀비가 되어야한다"<br>
-                                "<span
-                                    style="color:yellow; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold'">선칭찬
-                                    후 피드백!</span> 칭찬은 좀비도 춤추게 한다."<br>
-                                "협업에서 소통 방식은 <i></i><span
-                                    style="color:yellow; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold'">'상대가
-                                    내 말을 나와 같은 뜻으로 이해했는가'</span>를 항상 교차확인하자"</p>
-
-                            <p style="font-size: 24px; "><span style=" line-height: 4.0;color:orange;">4 </span>일차</p>
-                            <p style="font-size: 22px; "> 우... 우리는 <i><span
-                                        style="color:yellow; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold'">1인분</span>몫을
-                                    하는 좀비가 되었고, 대화를 많이하는 좀비가 되었다,,,,!!!</p>
-
-                            <p style="font-size: 24px; "><span style=" line-height: 4.0;color:orange;">5 </span>일차</p>
-                            <p
-                                style="font-size: 22px; color:red; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold'">
-                                자... 이제 너의 차례야 6기, 모두 좀비될 준비 됐나!!!!!?</p>
-                            <p style="font-size: 50px;">. . .</p>
-                            </p>
+                            <button id="prev" class="arrow ">◀</button>
+                            <p id="popupText" class="content">내용 표기 구역</p>
+                            <button id="next" class="arrow ">▶</button>
                         </div>
                     </div>
+
+                    <span style="display: none;">
+                        <div id="contentData">
+                            <p>첫 번째 내용입니다.</p>
+                            <p>두 번째 내용이에요!</p>
+                            <p>세 번째 내용도 있어요! 😊</p>
+                            <p>마지막 내용입니다!</p>
+                        </div>
+                    </span>
+
+
+                    <!--                     기존 작성 내용입니다.
+                    <p style="font-size: 50px;">. . .</p>
+                    <p style="font-size: 24px; "><span style=" line-height: 4.0;color:orange;">1 </span>일차</p>
+                    <p style="font-size: 22px; line-height: 4.0;"> 내가 생각한 프로젝트를 구현하고 원하는대로 동작하고 좋은 상태로 유지하고
+                        싶어!!<br> </P>
+
+                    <p style="font-size: 24px; color:orange;"><span style=" line-height: 4.0;color:orange;">2
+                        </span>일차</p>
+                    <p style="font-size: 22px; line-height: 4.0;">.... 각개분투 후 모이니, 같은 곳을 동시에 하고 있는 비효율적인 행동을 하고
+                        있었다,,,,!!<br>
+                        내가 생각한 기능을 모두가 다른 기능으로 생각하고 있었다....!!!?<br>
+                        모두.. 집합.... 각자의 최애템을 통해서라도... <br>우리는 계속 개발을 해나가야해.....<br>
+                        (커피쪽쪽, 운동으쌰, 게임뿅뿅, 집B콕눕개발, 먹어우걱)<br></p>
+
+                    <p style="font-size: 24px; "><span style=" line-height: 4.0;color:orange;">3 </span>일차</p>
+                    <p style="font-size: 22px;">내 생명과 바꿔 교훈을 얻었다....<br>
+                        "<span style="color:yellow; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold'">팀원들과
+                            잘 어울어지는</span> 좀비가 되어야한다"<br>
+                        "<span style="color:yellow; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold'">선칭찬
+                            후 피드백!</span> 칭찬은 좀비도 춤추게 한다."<br>
+                        "협업에서 소통 방식은 <i></i><span
+                            style="color:yellow; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold'">'상대가
+                            내 말을 나와 같은 뜻으로 이해했는가'</span>를 항상 교차확인하자"</p>
+
+                    <p style="font-size: 24px; "><span style=" line-height: 4.0;color:orange;">4 </span>일차</p>
+                    <p style="font-size: 22px; "> 우... 우리는 <i><span
+                                style="color:yellow; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold'">1인분</span>몫을
+                            하는 좀비가 되었고, 대화를 많이하는 좀비가 되었다,,,,!!!</p>
+
+                    <p style="font-size: 24px; "><span style=" line-height: 4.0;color:orange;">5 </span>일차</p>
+                    <p style="font-size: 22px; color:red; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold'">
+                        자... 이제 너의 차례야 6기, 모두 좀비될 준비 됐나!!!!!?</p>
+                    <p style="font-size: 50px;">. . .</p> -->
+
 
 
 

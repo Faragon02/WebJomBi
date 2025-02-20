@@ -107,18 +107,27 @@ button {
     left: 50%;
     transform: translate(-50%, -50%);
     background: black;
-    border-color: white;
     border-style: outset;
     width: 50%;
     height: 300px;
     margin: 3% auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     border: 5px outset green; 
     box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); 
     z-index: 10000;
     overflow: auto;
     cursor: default;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* 내용 */
+.content {
+    width: 70%;
+    height: 80%;
+    font-size: 1.2rem;              /* 내용 글자 크기 */
+    text-align: center;             /* 내용 가운데 정렬 */
 }
 
 /* 스크롤바 디자인 */
@@ -134,11 +143,27 @@ button {
     background: transparent;  /* 스크롤바 트랙을 투명하게 */
 }
 
-.close {
+/* 화살표 버튼 */
+.arrow {
+    background-color: green;
+    color: white;
+    font-size: 20px;
+    padding: 5px 10px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.arrow:hover {
+    background-color: darkgreen;
+}
+
+/* .close {
     float: right;
     font-size: 20px;
     cursor: pointer;
-}
+} */
 /* 여기까지지 */
 
 .mycards {

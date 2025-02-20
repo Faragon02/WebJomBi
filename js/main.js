@@ -88,14 +88,37 @@ $(document).ready(function () {
         window.location.href = 'detailpg.html';
     };
 
+    // 팝업 내용 변경 기능
+    const popupText = document.getElementById("popupText");
+    const contentElements = document.querySelectorAll("#contentData p");
+    const contents = Array.from(contentElements).map(element => element.textContent);
+
+
     // 팝업창 불러오기
-    document.getElementById("openPopup").addEventListener("click", function() {
+    document.getElementById("openPopup").addEventListener("click", function () {
         document.getElementById("popup").style.display = "block";
+        popupText.textContent = contents[0]; // 팝업을 열 때 첫 번째 내용 표시
     });
-    
-    document.getElementById("popup").addEventListener("click", function(event) {
+
+    document.getElementById("popup").addEventListener("click", function (event) {
         if (event.target === document.getElementById("popup")) {
             document.getElementById("popup").style.display = "none";
+        }
+    });
+
+    let currentIndex = 0; // 현재 내용의 인덱스
+
+    document.getElementById("prev").addEventListener("click", function () {
+        if (currentIndex > 0) {
+            currentIndex--;
+            popupText.textContent = contents[currentIndex];
+        }
+    });
+
+    document.getElementById("next").addEventListener("click", function () {
+        if (currentIndex < contents.length - 1) {
+            currentIndex++;
+            popupText.textContent = contents[currentIndex];
         }
     });
 

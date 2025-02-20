@@ -88,6 +88,16 @@ $(document).ready(function () {
         window.location.href = 'detailpg.html';
     };
 
+    // 팝업창 불러오기
+    document.getElementById("openPopup").addEventListener("click", function() {
+        document.getElementById("popup").style.display = "block";
+    });
+    
+    document.getElementById("popup").addEventListener("click", function(event) {
+        if (event.target === document.getElementById("popup")) {
+            document.getElementById("popup").style.display = "none";
+        }
+    });
 
     loadData();
 });

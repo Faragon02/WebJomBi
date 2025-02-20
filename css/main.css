@@ -322,3 +322,7 @@ body{
 .button:active {
     animation: shake 0.2s ease-in-out;
 }
+
+.card{
+    background-color: rgb(41, 41, 41);
+}

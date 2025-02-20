@@ -128,7 +128,7 @@ button:hover {
     width: 250px;
     height: 400px;
     border: 2px;
-    background-color: gray;
+    background-color: rgb(41, 41, 41);
     margin-bottom: 15px;
     border-radius: 10px;
 }
